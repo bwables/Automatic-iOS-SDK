@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'AutomaticSDK'
-  s.version      = '0.0.1'
+  s.version      = '0.1.0'
   s.summary      = 'The best way to build iOS apps powered by Automatic'
   s.description  = 'With the Automatic iOS SDK, your users can log in to your '\
                    'app with their Automatic accounts. Think Facebook or '\
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   }
   s.source       = {
     :git => 'https://github.com/Automatic/Automatic-iOS-SDK.git',
-    :tag => '0.0.1'
+    :tag => '0.1.0'
   }
   s.source_files = 'AutomaticSDK', 'AutomaticSDK/**/*.{h,m}'
   s.requires_arc = true
