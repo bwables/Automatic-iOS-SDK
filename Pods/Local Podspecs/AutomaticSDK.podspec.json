@@ -24,10 +24,10 @@
   },
   "dependencies": {
     "AFNetworking": [
-      "~> 2.5"
+      "~> 3.0"
     ],
     "AFOAuth2Manager": [
-      "~> 2.2"
+      "~> 3.0"
     ],
     "libextobjc/EXTScope": [
 

@@ -12,27 +12,36 @@
 
 @implementation AUTClient (Pagination)
 
-- (AFHTTPRequestOperation *)fetchPage:(NSURL *)pageURL success:(void(^)(NSDictionary *))success failure:(void(^)(NSError *))failure {
+- (NSURLSessionDataTask *)fetchPage:(NSURL *)pageURL success:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure {
     NSParameterAssert(pageURL != nil);
 
     NSError *error;
-    NSURLRequest *request = [self.requestManager.requestSerializer
+    NSURLRequest *request = [self.sessionManager.requestSerializer
         requestBySerializingRequest:[NSURLRequest requestWithURL:pageURL]
         withParameters:nil
         error:&error];
 
     if (request == nil && failure != nil) {
-        dispatch_async(self.requestManager.completionQueue ?: dispatch_get_main_queue(), ^{
+        dispatch_async(self.sessionManager.completionQueue ?: dispatch_get_main_queue(), ^{
             failure(error);
         });
     }
 
-    AFHTTPRequestOperation *operation = [self.requestManager
-        HTTPRequestOperationWithRequest:request
-        success:AUTExtractResponseObject(success)
-        failure:AUTExtractError(failure)];
+    NSURLSessionDataTask *operation = [self.sessionManager
+        dataTaskWithRequest:request
+        completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            if (error == nil) {
+                if (success != nil) {
+                    success(responseObject);
+                }
+            } else {
+                if (failure != nil) {
+                    failure(error);
+                }
+            }
+        }];
 
-    [self.requestManager.operationQueue addOperation:operation];
+    [operation resume];
 
     return operation;
 }

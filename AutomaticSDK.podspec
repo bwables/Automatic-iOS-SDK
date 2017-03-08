@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.platform     = :ios, '8.0'
 
-  s.dependency 'AFNetworking',    '~> 2.5'
-  s.dependency 'AFOAuth2Manager', '~> 2.2'
+  s.dependency 'AFNetworking',    '~> 3.0'
+  s.dependency 'AFOAuth2Manager', '~> 3.0'
   s.dependency 'libextobjc/EXTScope'
 end

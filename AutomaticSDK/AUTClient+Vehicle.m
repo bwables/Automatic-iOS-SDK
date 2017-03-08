@@ -12,30 +12,33 @@
 
 @implementation AUTClient (Vehicle)
 
-- (AFHTTPRequestOperation *)fetchVehiclesForCurrentUserWithSuccess:(void(^)(NSDictionary *))success failure:(void(^)(NSError *))failure {
-    return [self.requestManager
+- (NSURLSessionDataTask *)fetchVehiclesForCurrentUserWithSuccess:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure {
+    return [self.sessionManager
         GET:@"vehicle/"
         parameters:nil
+        progress:nil
         success:AUTExtractResponseObject(success)
         failure:AUTExtractError(failure)];
 }
 
-- (AFHTTPRequestOperation *)fetchVehiclesForUserWithID:(NSString *)userID success:(void(^)(NSDictionary *))success failure:(void(^)(NSError *))failure {
+- (NSURLSessionDataTask *)fetchVehiclesForUserWithID:(NSString *)userID success:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure {
     NSParameterAssert(userID != nil);
 
-    return [self.requestManager
+    return [self.sessionManager
         GET:[NSString stringWithFormat:@"user/%@/vehicle/", userID]
         parameters:nil
+        progress:nil
         success:AUTExtractResponseObject(success)
         failure:AUTExtractError(failure)];
 }
 
-- (AFHTTPRequestOperation *)fetchVehicleWithID:(NSString *)vehicleID success:(void(^)(NSDictionary *))success failure:(void(^)(NSError *))failure {
+- (NSURLSessionDataTask *)fetchVehicleWithID:(NSString *)vehicleID success:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure {
     NSParameterAssert(vehicleID != nil);
 
-    return [self.requestManager
+    return [self.sessionManager
         GET:[NSString stringWithFormat:@"vehicle/%@/", vehicleID]
         parameters:nil
+        progress:nil
         success:AUTExtractResponseObject(success)
         failure:AUTExtractError(failure)];
 }

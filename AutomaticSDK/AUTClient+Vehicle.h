@@ -8,9 +8,7 @@
 
 #import <AutomaticSDK/AutomaticSDK.h>
 
-#pragma clang assume_nonnull begin
-
-@class AFHTTPRequestOperation;
+NS_ASSUME_NONNULL_BEGIN
 
 @interface AUTClient (Vehicle)
 
@@ -22,9 +20,9 @@
  *  @param failure A block object to be invoked with an error if the request
  *                 fails.
  *
- *  @return An `AFHTTPRequestOperation` representing the request.
+ *  @return An `NSURLSessionDataTask` representing the request.
  */
-- (AFHTTPRequestOperation *)fetchVehiclesForCurrentUserWithSuccess:(void(^ __aut_nullable)(__aut_nullable NSDictionary *))success failure:(void(^ __aut_nullable)(__aut_nullable NSError *))failure;
+- (NSURLSessionDataTask *)fetchVehiclesForCurrentUserWithSuccess:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure;
 
 /**
  *  Fetches the vehicles belonging to the user with the given ID.
@@ -36,9 +34,9 @@
  *  @param failure A block object to be invoked with an error if the request
  *                 fails.
  *
- *  @return An `AFHTTPRequestOperation` representing the request.
+ *  @return An `NSURLSessionDataTask` representing the request.
  */
-- (AFHTTPRequestOperation *)fetchVehiclesForUserWithID:(NSString *)userID success:(void(^ __aut_nullable)(__aut_nullable NSDictionary *))success failure:(void(^ __aut_nullable)(__aut_nullable NSError *))failure;
+- (NSURLSessionDataTask *)fetchVehiclesForUserWithID:(NSString *)userID success:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure;
 
 /**
  *  Fetches a vehicles with a given ID.
@@ -50,10 +48,10 @@
  *  @param failure   A block object to be invoked with an error if the request
  *                   fails.
  *
- *  @return An `AFHTTPRequestOperation` representing the request.
+ *  @return An `NSURLSessionDataTask` representing the request.
  */
-- (AFHTTPRequestOperation *)fetchVehicleWithID:(NSString *)vehicleID success:(void(^ __aut_nullable)(__aut_nullable NSDictionary *))success failure:(void(^ __aut_nullable)(__aut_nullable NSError *))failure;
+- (NSURLSessionDataTask *)fetchVehicleWithID:(NSString *)vehicleID success:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure;
 
 @end
 
-#pragma clang assume_nonnull end
+NS_ASSUME_NONNULL_END

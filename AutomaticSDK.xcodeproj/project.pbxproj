@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		006AD54039DA27420AD1517D /* libPods-AutomaticSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 801FE70E5828FDDCFBC37ABF /* libPods-AutomaticSDK.a */; };
-		17BA96B6594D63BC0D38ACE3 /* libPods-AutomaticSDKTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB34BC0A01FE288FAD2C0483 /* libPods-AutomaticSDKTests.a */; };
 		54098B311AA9013300C5F851 /* AutomaticSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 54098B301AA9013300C5F851 /* AutomaticSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54098B371AA9013300C5F851 /* AutomaticSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54098B2B1AA9013300C5F851 /* AutomaticSDK.framework */; };
 		5410A0F91AAF22F600CA98BA /* AUTClient+Vehicle.h in Headers */ = {isa = PBXBuildFile; fileRef = 5410A0F71AAF22F600CA98BA /* AUTClient+Vehicle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +24,8 @@
 		546B90A11AB0643C0045C211 /* AUTClient+Pagination.h in Headers */ = {isa = PBXBuildFile; fileRef = 546B909F1AB0643C0045C211 /* AUTClient+Pagination.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		546B90A21AB0643C0045C211 /* AUTClient+Pagination.m in Sources */ = {isa = PBXBuildFile; fileRef = 546B90A01AB0643C0045C211 /* AUTClient+Pagination.m */; };
 		546B90A41AB0653E0045C211 /* AUTClient+PaginationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 546B90A31AB0653E0045C211 /* AUTClient+PaginationSpec.m */; };
+		7559DA6A2B2A3FDAF2B1155D /* libPods-AutomaticSDKTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E14902AC792E4853519F49E /* libPods-AutomaticSDKTests.a */; };
+		ECED11DD2CFEA95793A17792 /* libPods-AutomaticSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8331239A520C83886B42A48 /* libPods-AutomaticSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03B9CB51969AFA8B2BD3247F /* Pods-AutomaticSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutomaticSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutomaticSDK/Pods-AutomaticSDK.release.xcconfig"; sourceTree = "<group>"; };
+		0CC304020DA04C575FA1500B /* Pods-AutomaticSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutomaticSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutomaticSDKTests/Pods-AutomaticSDKTests.release.xcconfig"; sourceTree = "<group>"; };
+		0F6E066DFE2DD0568DDD4D92 /* Pods-AutomaticSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutomaticSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutomaticSDK/Pods-AutomaticSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		54098B2B1AA9013300C5F851 /* AutomaticSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutomaticSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54098B2F1AA9013300C5F851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54098B301AA9013300C5F851 /* AutomaticSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutomaticSDK.h; sourceTree = "<group>"; };
@@ -50,8 +53,6 @@
 		5410A0FF1AAF379500CA98BA /* AUTClient+Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AUTClient+Trip.h"; sourceTree = "<group>"; };
 		5410A1001AAF379500CA98BA /* AUTClient+Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AUTClient+Trip.m"; sourceTree = "<group>"; };
 		5410A1031AAF385100CA98BA /* AUTClient+TripSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AUTClient+TripSpec.m"; sourceTree = "<group>"; };
-		541BE6281AB368960079FCCD /* Pods-AutomaticSDK.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-AutomaticSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutomaticSDK/Pods-AutomaticSDK.debug.xcconfig"; sourceTree = "<group>"; };
-		541BE6291AB368960079FCCD /* Pods-AutomaticSDK.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-AutomaticSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutomaticSDK/Pods-AutomaticSDK.release.xcconfig"; sourceTree = "<group>"; };
 		54319A941AA907DB008E68CB /* AUTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUTClient.h; sourceTree = "<group>"; };
 		54319A951AA907DB008E68CB /* AUTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUTClient.m; sourceTree = "<group>"; };
 		54319A981AA908CD008E68CB /* AUTClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUTClientSpec.m; sourceTree = "<group>"; };
@@ -61,10 +62,9 @@
 		546B909F1AB0643C0045C211 /* AUTClient+Pagination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AUTClient+Pagination.h"; sourceTree = "<group>"; };
 		546B90A01AB0643C0045C211 /* AUTClient+Pagination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AUTClient+Pagination.m"; sourceTree = "<group>"; };
 		546B90A31AB0653E0045C211 /* AUTClient+PaginationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AUTClient+PaginationSpec.m"; sourceTree = "<group>"; };
-		801FE70E5828FDDCFBC37ABF /* libPods-AutomaticSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutomaticSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB0999E6B663759BCFF8F26B /* Pods-AutomaticSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutomaticSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutomaticSDKTests/Pods-AutomaticSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BB34BC0A01FE288FAD2C0483 /* libPods-AutomaticSDKTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutomaticSDKTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFE3CFB9E6D6F0246A616F73 /* Pods-AutomaticSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutomaticSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutomaticSDKTests/Pods-AutomaticSDKTests.release.xcconfig"; sourceTree = "<group>"; };
+		9E14902AC792E4853519F49E /* libPods-AutomaticSDKTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutomaticSDKTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF67584519D33B291424F11F /* Pods-AutomaticSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutomaticSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutomaticSDKTests/Pods-AutomaticSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8331239A520C83886B42A48 /* libPods-AutomaticSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutomaticSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				006AD54039DA27420AD1517D /* libPods-AutomaticSDK.a in Frameworks */,
+				ECED11DD2CFEA95793A17792 /* libPods-AutomaticSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,21 +81,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				54098B371AA9013300C5F851 /* AutomaticSDK.framework in Frameworks */,
-				17BA96B6594D63BC0D38ACE3 /* libPods-AutomaticSDKTests.a in Frameworks */,
+				7559DA6A2B2A3FDAF2B1155D /* libPods-AutomaticSDKTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25464027A678BF3634C78B2A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F6E066DFE2DD0568DDD4D92 /* Pods-AutomaticSDK.debug.xcconfig */,
+				03B9CB51969AFA8B2BD3247F /* Pods-AutomaticSDK.release.xcconfig */,
+				CF67584519D33B291424F11F /* Pods-AutomaticSDKTests.debug.xcconfig */,
+				0CC304020DA04C575FA1500B /* Pods-AutomaticSDKTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		54098B211AA9013200C5F851 = {
 			isa = PBXGroup;
 			children = (
 				54098B2D1AA9013300C5F851 /* AutomaticSDK */,
 				54098B3A1AA9013300C5F851 /* AutomaticSDKTests */,
 				54098B2C1AA9013300C5F851 /* Products */,
-				9388CFFF5C4D6B0B3099030C /* Pods */,
-				8D87EE3BF2F317E0629CCD21 /* Frameworks */,
+				25464027A678BF3634C78B2A /* Pods */,
+				F0E1D8A3A961510513D82543 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,24 +167,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8D87EE3BF2F317E0629CCD21 /* Frameworks */ = {
+		F0E1D8A3A961510513D82543 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BB34BC0A01FE288FAD2C0483 /* libPods-AutomaticSDKTests.a */,
-				801FE70E5828FDDCFBC37ABF /* libPods-AutomaticSDK.a */,
+				D8331239A520C83886B42A48 /* libPods-AutomaticSDK.a */,
+				9E14902AC792E4853519F49E /* libPods-AutomaticSDKTests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9388CFFF5C4D6B0B3099030C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				541BE6281AB368960079FCCD /* Pods-AutomaticSDK.debug.xcconfig */,
-				541BE6291AB368960079FCCD /* Pods-AutomaticSDK.release.xcconfig */,
-				AB0999E6B663759BCFF8F26B /* Pods-AutomaticSDKTests.debug.xcconfig */,
-				DFE3CFB9E6D6F0246A616F73 /* Pods-AutomaticSDKTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,12 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54098B411AA9013300C5F851 /* Build configuration list for PBXNativeTarget "AutomaticSDK" */;
 			buildPhases = (
-				6E487711DE83D3C51FF324C2 /* Check Pods Manifest.lock */,
+				A882639DE2FADF33763A23A3 /* [CP] Check Pods Manifest.lock */,
 				54098B261AA9013200C5F851 /* Sources */,
 				54098B271AA9013200C5F851 /* Frameworks */,
 				54098B281AA9013200C5F851 /* Headers */,
 				54098B291AA9013200C5F851 /* Resources */,
-				303EC1480FBE189D4151230A /* Copy Pods Resources */,
+				51CC4971C1A85915151BAE02 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,11 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54098B441AA9013300C5F851 /* Build configuration list for PBXNativeTarget "AutomaticSDKTests" */;
 			buildPhases = (
-				04E833D9453448E9EDF7C677 /* Check Pods Manifest.lock */,
+				7E28F0729A20558C9DA6C1D8 /* [CP] Check Pods Manifest.lock */,
 				54098B321AA9013300C5F851 /* Sources */,
 				54098B331AA9013300C5F851 /* Frameworks */,
 				54098B341AA9013300C5F851 /* Resources */,
-				79F8D6DFF56281DA55BE0F24 /* Copy Pods Resources */,
+				285E94E0CDD9975352E41EA7 /* [CP] Embed Pods Frameworks */,
+				2A9CDB14E163DF4DF9337820 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,7 +242,7 @@
 		54098B221AA9013200C5F851 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Automatic Labs";
 				TargetAttributes = {
 					54098B2A1AA9013200C5F851 = {
@@ -289,29 +290,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04E833D9453448E9EDF7C677 /* Check Pods Manifest.lock */ = {
+		285E94E0CDD9975352E41EA7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutomaticSDKTests/Pods-AutomaticSDKTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		303EC1480FBE189D4151230A /* Copy Pods Resources */ = {
+		2A9CDB14E163DF4DF9337820 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutomaticSDKTests/Pods-AutomaticSDKTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51CC4971C1A85915151BAE02 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,34 +335,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutomaticSDK/Pods-AutomaticSDK-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6E487711DE83D3C51FF324C2 /* Check Pods Manifest.lock */ = {
+		7E28F0729A20558C9DA6C1D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		79F8D6DFF56281DA55BE0F24 /* Copy Pods Resources */ = {
+		A882639DE2FADF33763A23A3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutomaticSDKTests/Pods-AutomaticSDKTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -400,16 +416,20 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -445,8 +465,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -455,6 +477,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -473,8 +496,9 @@
 		};
 		54098B421AA9013300C5F851 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 541BE6281AB368960079FCCD /* Pods-AutomaticSDK.debug.xcconfig */;
+			baseConfigurationReference = 0F6E066DFE2DD0568DDD4D92 /* Pods-AutomaticSDK.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -482,6 +506,7 @@
 				INFOPLIST_FILE = AutomaticSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.automatic.ios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -489,8 +514,9 @@
 		};
 		54098B431AA9013300C5F851 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 541BE6291AB368960079FCCD /* Pods-AutomaticSDK.release.xcconfig */;
+			baseConfigurationReference = 03B9CB51969AFA8B2BD3247F /* Pods-AutomaticSDK.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -498,6 +524,7 @@
 				INFOPLIST_FILE = AutomaticSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.automatic.ios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -505,32 +532,26 @@
 		};
 		54098B451AA9013300C5F851 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB0999E6B663759BCFF8F26B /* Pods-AutomaticSDKTests.debug.xcconfig */;
+			baseConfigurationReference = CF67584519D33B291424F11F /* Pods-AutomaticSDKTests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = AutomaticSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.automatic.ios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		54098B461AA9013300C5F851 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFE3CFB9E6D6F0246A616F73 /* Pods-AutomaticSDKTests.release.xcconfig */;
+			baseConfigurationReference = 0CC304020DA04C575FA1500B /* Pods-AutomaticSDKTests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = AutomaticSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.automatic.ios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

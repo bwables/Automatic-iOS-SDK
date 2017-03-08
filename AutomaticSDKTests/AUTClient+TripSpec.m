@@ -36,7 +36,7 @@ beforeEach(^{
 
 describe(@"-fetchTripsForCurrentUserWithSuccess:failure:", ^{
     it(@"should fetch a list of trips", ^{
-        stubRequest(@"GET", @"https://api.automatic.com/trip/")
+        stubRequest(@"GET", @"https://api\\.automatic\\.com/trip/\\?started_at__gte=[0-9.]+&started_at__lte=[0-9.]+".regex)
             .withHeader(@"Authorization", @"Bearer ACCESS_TOKEN")
             .andReturn(200)
             .withHeader(@"Content-type", @"application/json")
@@ -126,7 +126,7 @@ describe(@"-fetchTripsForCurrentUserWithSuccess:failure:", ^{
 
 describe(@"-fetchTripsForUserWithID:success:failure:", ^{
     it(@"should fetch a list of trips", ^{
-        stubRequest(@"GET", @"https://api.automatic.com/user/U_acdbcbbe83d3c554/trip/")
+        stubRequest(@"GET", @"https://api\\.automatic\\.com/user/U_acdbcbbe83d3c554/trip/\\?started_at__gte=[0-9.]+&started_at__lte=[0-9.]+".regex)
             .withHeader(@"Authorization", @"Bearer ACCESS_TOKEN")
             .andReturn(200)
             .withHeader(@"Content-type", @"application/json")

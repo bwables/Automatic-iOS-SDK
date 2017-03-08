@@ -1,6 +1,8 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/AFOAuth2Manager"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/AFOAuth2Manager"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-AutomaticSDK-AFNetworking" -l"Pods-AutomaticSDK-AFOAuth2Manager" -framework "CoreGraphics" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration"
-OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/AFOAuth2Manager" "${PODS_ROOT}/Headers/Public/AutomaticSDK" "${PODS_ROOT}/Headers/Public/Expecta" "${PODS_ROOT}/Headers/Public/Nocilla" "${PODS_ROOT}/Headers/Public/Specta" "${PODS_ROOT}/Headers/Public/libextobjc"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AFNetworking-iOS10.0" "$PODS_CONFIGURATION_BUILD_DIR/AFOAuth2Manager-iOS10.0"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/AFOAuth2Manager" -isystem "${PODS_ROOT}/Headers/Public/AutomaticSDK" -isystem "${PODS_ROOT}/Headers/Public/Expecta" -isystem "${PODS_ROOT}/Headers/Public/Nocilla" -isystem "${PODS_ROOT}/Headers/Public/Specta" -isystem "${PODS_ROOT}/Headers/Public/libextobjc"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AFNetworking-iOS10.0" -l"AFOAuth2Manager-iOS10.0" -framework "CoreGraphics" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods

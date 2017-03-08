@@ -48,13 +48,17 @@ const NSInteger AUTClientErrorAuthorizationFailed = 1;
  *  @param failure A block to be invoked with an error if the authorization
  *                 fails.
  */
-- (void)authorizeWithCode:(NSString *)code success:(aut_nullable void(^)(void))success failure:(aut_nullable void(^)(__aut_nullable NSError *))failure;
+- (void)authorizeWithCode:(NSString *)code success:(nullable AUTSuccessBlock)success failure:(nullable AUTFailureBlock)failure;
 
 @end
 
 @implementation AUTClient
 
 #pragma mark - Lifecycle
+
+- (instancetype)init {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Use the designated initializer instead" userInfo:nil];
+}
 
 - (instancetype)initWithClientID:(NSString *)clientID clientSecret:(NSString *)clientSecret {
     NSParameterAssert(clientID != nil);
@@ -66,7 +70,7 @@ const NSInteger AUTClientErrorAuthorizationFailed = 1;
     _clientID = [clientID copy];
     _clientSecret = [clientSecret copy];
     _OAuth2Manager = [[AFOAuth2Manager alloc] initWithBaseURL:AUTClient.authenticationBaseURL clientID:clientID secret:clientSecret];
-    _requestManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:self.class.APIBaseURL];
+    _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:self.class.APIBaseURL];
 
     return self;
 }
@@ -80,7 +84,7 @@ const NSInteger AUTClientErrorAuthorizationFailed = 1;
 - (void)setCredential:(AFOAuthCredential *)credential {
     _credential = credential;
 
-    [self.requestManager.requestSerializer setAuthorizationHeaderFieldWithCredential:credential];
+    [self.sessionManager.requestSerializer setAuthorizationHeaderFieldWithCredential:credential];
 }
 
 #pragma mark - AUTClient
@@ -293,18 +297,18 @@ const NSInteger AUTClientErrorAuthorizationFailed = 1;
 
 @end
 
-extern void (^AUTExtractResponseObject(void (^callback)(NSDictionary *)))(AFHTTPRequestOperation *, id) {
+extern void (^ _Nullable AUTExtractResponseObject(_Nullable AUTResponseBlock callback))(NSURLSessionDataTask * _Nullable, id _Nullable) {
     if (callback == nil) return nil;
 
-    return ^(AFHTTPRequestOperation *_, id responseObject) {
+    return ^(NSURLSessionDataTask *_, id responseObject) {
         callback(responseObject);
     };
 }
 
-extern void (^AUTExtractError(void (^callback)(NSError *)))(AFHTTPRequestOperation *, NSError *) {
+extern void (^ _Nullable AUTExtractError(_Nullable AUTFailureBlock callback))(NSURLSessionDataTask * _Nullable, NSError * _Nullable) {
     if (callback == nil) return nil;
 
-    return ^(AFHTTPRequestOperation *_, NSError *error) {
+    return ^(NSURLSessionDataTask *_, NSError *error) {
         callback(error);
     };
 }

@@ -8,9 +8,9 @@
 
 #import <AutomaticSDK/AutomaticSDK.h>
 
-#pragma clang assume_nonnull begin
+NS_ASSUME_NONNULL_BEGIN
 
-@class AFHTTPRequestOperation;
+@class NSURLSessionDataTask;
 
 @interface AUTClient (User)
 
@@ -22,9 +22,9 @@
  *  @param failure A block object to be invoked with an error if the request
  *                 fails.
  *
- *  @return An `AFHTTPRequestOperation` representing the request.
+ *  @return An `NSURLSessionDataTask` representing the request.
  */
-- (AFHTTPRequestOperation *)fetchCurrentUserWithSuccess:(void(^ __aut_nullable)(__aut_nullable NSDictionary *))success failure:(void(^ __aut_nullable)(__aut_nullable NSError *))failure;
+- (NSURLSessionDataTask *)fetchCurrentUserWithSuccess:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure;
 
 /**
  *  Fetches a user with a given ID.
@@ -36,10 +36,10 @@
  *  @param failure A block object to be invoked with an error if the request
  *                 fails.
  *
- *  @return An `AFHTTPRequestOperation` representing the request.
+ *  @return An `NSURLSessionDataTask` representing the request.
  */
-- (AFHTTPRequestOperation *)fetchCurrentUserWithID:(NSString *)userID success:(void(^ __aut_nullable)(__aut_nullable NSDictionary *))success failure:(void(^ __aut_nullable)(__aut_nullable NSError *))failure;
+- (NSURLSessionDataTask *)fetchCurrentUserWithID:(NSString *)userID success:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure;
 
 @end
 
-#pragma clang assume_nonnull end
+NS_ASSUME_NONNULL_END

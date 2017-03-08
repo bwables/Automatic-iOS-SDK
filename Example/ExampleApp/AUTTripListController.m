@@ -14,7 +14,7 @@
 
 @interface AUTTripListController ()
 
-@property (readwrite, nonatomic, strong) AFHTTPRequestOperation *currentRequest;
+@property (readwrite, nonatomic, strong) NSURLSessionDataTask *currentRequest;
 
 @property (readwrite, nonatomic, strong) NSURL *nextPageURL;
 
@@ -25,6 +25,14 @@
 @implementation AUTTripListController
 
 #pragma mark - Lifecycle
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Use the designated initializer instead" userInfo:nil];
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Use the designated initializer instead" userInfo:nil];
+}
 
 - (instancetype)initWithClient:(AUTClient *)client {
     NSParameterAssert(client != nil);
@@ -54,6 +62,8 @@
 
 #pragma mark - UIViewController
 
+@dynamic view;
+
 - (void)loadView {
     [super loadView];
 
@@ -66,7 +76,7 @@
 - (void)refresh:(id)sender {
     [self.refreshControl beginRefreshing];
 
-    if (self.currentRequest.isExecuting) {
+    if (self.currentRequest.state == NSURLSessionTaskStateRunning) {
         [self.currentRequest cancel];
 
         self.currentRequest = nil;
@@ -96,7 +106,7 @@
 }
 
 - (void)fetchMore:(id)sender {
-    if (self.currentRequest.isExecuting) return;
+    if (self.currentRequest.state == NSURLSessionTaskStateRunning) return;
 
     @weakify(self);
     self.currentRequest = [self.client
