@@ -12,6 +12,9 @@
 
 @interface AUTTripListController : UITableViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil NS_UNAVAILABLE;
+
 - (instancetype)initWithClient:(AUTClient *)client NS_DESIGNATED_INITIALIZER;
 
 @property (readonly, nonatomic, strong) AUTClient *client;

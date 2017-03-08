@@ -8,29 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-// Allow the use of nullability attributes while keeping compatibility with
-// Xcode 6.1 and 6.2
-#if __has_feature(nullability)
-#define aut_nonnull nonnull
-#define aut_nullable nullable
-#define aut_null_unspecified null_unspecified
-#define __aut_nonnull __nonnull
-#define __aut_nullable __nullable
-#define __aut_null_unspecified __null_unspecified
-#else
-#define aut_nonnull
-#define aut_nullable
-#define aut_null_unspecified
-#define __aut_nonnull
-#define __aut_nullable
-#define __aut_null_unspecified
-#endif
+NS_ASSUME_NONNULL_BEGIN
 
-#pragma clang assume_nonnull begin
-
-@class AFHTTPRequestOperation;
-@class AFHTTPRequestOperationManager;
+@class NSURLSessionDataTask;
+@class AFHTTPSessionManager;
 @class AFOAuthCredential;
+
+typedef void(^AUTSuccessBlock)(void);
+
+typedef void(^AUTResponseBlock)(NSDictionary * _Nullable);
+
+typedef void(^AUTFailureBlock)(NSError * _Nullable);
 
 /**
  *  The different scopes an `AUTClient` can request.
@@ -117,14 +105,16 @@ extern const NSInteger AUTClientErrorAuthorizationFailed;
  *  See +[AFOAuthCredential storeCredential:withIdentifier:] on information how
  *  to persist this credential.
  */
-@property (readwrite, nonatomic, strong, aut_nullable) AFOAuthCredential *credential;
+@property (readwrite, nonatomic, strong, nullable) AFOAuthCredential *credential;
 
 /**
- *  The `AFHTTPRequestOperationManager` used by the client.
+ *  The `AFHTTPSessionManager` used by the client.
  *
  *  You can use this request manager to make additional API requests if need be.
  */
-@property (readonly, nonatomic, strong) AFHTTPRequestOperationManager *requestManager;
+@property (readonly, nonatomic, strong) AFHTTPSessionManager *sessionManager;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  *  Initializes a new `AUTClient`.
@@ -159,7 +149,7 @@ extern const NSInteger AUTClientErrorAuthorizationFailed;
  *  @param failure A block to be invoked with an error if the authorization
  *                 fails.
  */
-- (void)authorizeWithScopes:(AUTClientScopes)scopes success:(aut_nullable void(^)(void))success failure:(aut_nullable void(^)(__aut_nullable NSError *))failure;
+- (void)authorizeWithScopes:(AUTClientScopes)scopes success:(nullable AUTSuccessBlock)success failure:(nullable AUTFailureBlock)failure;
 
 /**
  *  Complete the authorization flow by calling this method.
@@ -184,30 +174,31 @@ extern const NSInteger AUTClientErrorAuthorizationFailed;
  *  @param failure    A block to be invoked with an error if the authorization
  *                    fails.
  */
-- (void)authorizeByRefreshingCredential:(AFOAuthCredential *)credential success:(aut_nullable void(^)(void))success failure:(aut_nullable void(^)(__aut_nullable NSError *))failure;
+- (void)authorizeByRefreshingCredential:(AFOAuthCredential *)credential success:(nullable AUTSuccessBlock)success failure:(nullable AUTFailureBlock)failure;
 
 @end
 
 /**
  *  Converts a block that takes an `NSDictionary` as its only argument into one
- *  that can be used as a success callback with `AFHTTPRequestOperationManager`.
+ *  that can be used as a success callback with `AFHTTPSessionManager`.
  *
- *  @param ^block The block to convert.
+ *  @param block The block to convert.
  *
  *  @return A block that can be used as a success callback to
- *          `AFHTTPRequestOperationManager` or `nil` if the block was `nil`.
+ *          `AFHTTPSessionManager` or `nil` if the block was `nil`.
  */
-extern void (^__aut_nullable AUTExtractResponseObject(void (^__aut_nullable block)(__aut_nullable NSDictionary *)))(__aut_nullable AFHTTPRequestOperation *, __aut_nullable id);
+extern void (^ _Nullable AUTExtractResponseObject(_Nullable AUTResponseBlock block))(NSURLSessionDataTask * _Nullable, id _Nullable);
 
 /**
  *  Converts a block that takes an `NSError *` as its only argument into one
- *  that can be used as a failure callback with `AFHTTPRequestOperationManager`.
+ *  that can be used as a failure callback with `AFHTTPSessionManager`.
  *
- *  @param ^block The block to convert.
+ *  @param block The block to convert.
  *
  *  @return A block that can be used as a failure callback to
- *          `AFHTTPRequestOperationManager` or `nil` if the block was `nil`.
+ *          `AFHTTPSessionManager` or `nil` if the block was `nil`.
  */
-extern void (^__aut_nullable AUTExtractError(void (^__aut_nullable block)(__aut_nullable NSError *)))(__aut_nullable AFHTTPRequestOperation *, __aut_nullable NSError *);
+extern void (^ _Nullable AUTExtractError(_Nullable AUTFailureBlock block))(NSURLSessionDataTask * _Nullable, NSError * _Nullable);
 
-#pragma clang assume_nonnull end
+NS_ASSUME_NONNULL_END
+

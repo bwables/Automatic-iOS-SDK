@@ -12,20 +12,22 @@
 
 @implementation AUTClient (User)
 
-- (AFHTTPRequestOperation *)fetchCurrentUserWithSuccess:(void(^)(NSDictionary *))success failure:(void(^)(NSError *))failure {
-    return [self.requestManager
+- (NSURLSessionDataTask *)fetchCurrentUserWithSuccess:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure {
+    return [self.sessionManager
         GET:@"user/me/"
         parameters:nil
+        progress:nil
         success:AUTExtractResponseObject(success)
         failure:AUTExtractError(failure)];
 }
 
-- (AFHTTPRequestOperation *)fetchCurrentUserWithID:(NSString *)userID success:(void(^)(NSDictionary *))success failure:(void(^)(NSError *))failure {
+- (NSURLSessionDataTask *)fetchCurrentUserWithID:(NSString *)userID success:(nullable AUTResponseBlock)success failure:(nullable AUTFailureBlock)failure {
     NSParameterAssert(userID != nil);
 
-    return [self.requestManager
+    return [self.sessionManager
         GET:[NSString stringWithFormat:@"user/%@/", userID]
         parameters:nil
+        progress:nil
         success:AUTExtractResponseObject(success)
         failure:AUTExtractError(failure)];
 }

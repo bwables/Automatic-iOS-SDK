@@ -269,15 +269,16 @@ describe(@"The requestManager", ^{
         __block id response = nil;
 
         waitUntil(^(DoneCallback done) {
-            [client.requestManager
+            [client.sessionManager
                 GET:@"/user/me/"
                 parameters:nil
-                success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                progress:nil
+                success:^(NSURLSessionDataTask *operation, id responseObject) {
                     response = responseObject;
                     success = YES;
                     done();
                 }
-                failure:^(AFHTTPRequestOperation *operation, NSError *requestError) {
+                failure:^(NSURLSessionDataTask *operation, NSError *requestError) {
                     success = NO;
                     error = requestError;
                     done();

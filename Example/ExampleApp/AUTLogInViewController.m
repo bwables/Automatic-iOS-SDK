@@ -23,6 +23,8 @@
 
 #pragma mark - UIViewController
 
+@dynamic view;
+
 - (void)loadView {
     self.view = [AUTLogInView new];
 }
